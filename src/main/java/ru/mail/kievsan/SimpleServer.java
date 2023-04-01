@@ -41,9 +41,10 @@ public class SimpleServer {
                         System.out.println("I got the client STOP command. Server is closing...");
                         break;
                     }
-                    out.println(String.format("I got your message:\t--< %s >--\tYour port: %d%n",
-                            msg, clientSocket.getPort()));
-                    System.out.printf("I got the client message:\t%s\tClient port: %d%n%n",
+                    out.println("I got your message:\t'" + msg + "'.\tYour port: " + clientSocket.getPort());
+//                    out.println(String.format("I got your message:\t--< %s >--\tYour port: %d%n", // будут косяки!!!
+//                            msg, clientSocket.getPort()));
+                    System.out.printf("I got the client message:\t%s\tClient port: %d%n",
                             msg, clientSocket.getPort());
                 }
             } finally { downClient(port); }
