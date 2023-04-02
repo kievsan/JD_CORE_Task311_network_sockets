@@ -1,24 +1,19 @@
 package ru.mail.kievsan;
 
-
 import java.io.*;
-
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Locale;
 
 public class SimpleServer {
 
     private static Socket clientSocket;
     private static ServerSocket serverSocket;
 
-
     public static void main(String[] args) throws IOException {
         int port = 8087;
         clearPort(port);
         upServerSocket(port);
     }
-
 
     public static void upServerSocket(int port) throws IOException {
         try {
@@ -28,7 +23,8 @@ public class SimpleServer {
             clientSocket = serverSocket.accept();
 
             try (PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));)
+                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                 )
             {
                 System.out.printf("New connection accepted on port %d%n", clientSocket.getPort());
                 String msg;

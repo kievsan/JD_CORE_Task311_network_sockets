@@ -1,16 +1,10 @@
 package ru.mail.kievsan;
 
 import java.io.IOException;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-
-import java.net.ConnectException;
 import java.net.Socket;
-
-import java.net.SocketException;
-import java.util.Locale;
 
 public class SimpleClient {
 
@@ -18,7 +12,6 @@ public class SimpleClient {
     private static BufferedReader reader;   // ридер, читающий с консоли
     private static BufferedReader in;       // поток чтения из сокета
     private static PrintWriter out;         // поток записи в сокет
-
 
     public static void main(String[] args) throws IOException {
         String host = "localhost";
